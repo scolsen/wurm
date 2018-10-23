@@ -3,6 +3,8 @@
 let s:active_bg=(&background)
 let s:colors = {}
 
+let g:colors_name = "wurm"
+
 " Color definitions.
 " 'apache' is 'indianred1'
 let s:colors.navajo      = ['#ffdfaf', 223]
