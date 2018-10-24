@@ -41,7 +41,10 @@ function! s:highlight(target, fg, ...)
     let histring .= 'gui=' . a:2 . ' cterm=' . a:2 . ' '
   endif
 
-  exe histring
+  " Check that we actually got arguments.
+  if histring != 'hi ' . a:target . ' '
+    exe histring
+  endif
 endfunction
 
 " TODO: Complete dark implementation.
