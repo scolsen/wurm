@@ -44,6 +44,7 @@ function! s:highlight(target, fg, ...)
   exe histring
 endfunction
 
+" TODO: Complete dark implementation.
 function! s:setDark()
   " Base colors.
   call s:highlight('Normal', 'navajo', 'darkgrey')
@@ -65,8 +66,8 @@ function! s:setDark()
   " Inline notifications. 
   call s:highlight('Todo', 'orchid', 'darkgrey', 'bold')
   call s:highlight('Search', 'orchid', 'navajo', 'bold')
-  call s:highlight('IncSearch')
-  call s:highlight('title')
+  call s:highlight('IncSearch', '')
+  call s:highlight('title', '')
  
   " Cursor
   call s:highlight('Cursor', 'darkmagenta', 'orchid')
@@ -79,14 +80,14 @@ function! s:setDark()
   call s:highlight('VertSplit', 'deepgrey', 'deepgrey')
 
   " Diff 
-  call s:highlight('DiffChange')
-  call s:highlight('DiffText')
-  call s:highlight('DiffAdd')
-  call s:highlight('DiffDelete')
+  call s:highlight('DiffChange', '')
+  call s:highlight('DiffText', '')
+  call s:highlight('DiffAdd', '')
+  call s:highlight('DiffDelete', '')
 
   " Folds
-  call s:highlight('Folded')
-  call s:highlight('FoldColumn')
+  call s:highlight('Folded', '')
+  call s:highlight('FoldColumn', '')
   
   " Visual
   call s:highlight('Visual', 'salmon', 'orchid')
@@ -96,7 +97,7 @@ function! s:setDark()
   call s:highlight('WarningMsg', 'salmon')
   call s:highlight('ModeMsg', 'lightorchid')
   call s:highlight('MoreMsg', 'skyblue')
-  call s:highlight('Error')
+  call s:highlight('Error', '')
 
   " Spelling
   call s:highlight('SpellLocal', '', '', 'italic')
