@@ -47,6 +47,17 @@ function! s:highlight(target, fg, ...)
   endif
 endfunction
 
+" Command line window. 
+" Since this relies on autocommands, users can turn this off using
+" g:wurm_cmdline
+function! s:setCmd()
+    if exists("g:wurm_cmdline") && g:wurm_cmdline != 0
+    au CmdLineEnter * call s:highlight('StatusLine', 'darkgrey', 'orchid')
+    au CmdLineLeave * call s:highlight('Normal', 'navajo', 'darkgrey')
+    au CmdLineLeave * call s:highlight('StatusLine', 'darkgrey', 'navajo')
+  endif
+endfunction
+
 " TODO: Complete dark implementation.
 function! s:setDark()
   " Base colors.
@@ -110,6 +121,8 @@ function! s:setDark()
   " Line gutter
   call s:highlight('LineNr', 'orchid', 'darkgrey')
   call s:highlight('SignColumn', '', 'densegrey')
+
+  call s:setCmd()
 endfunction
 
 " TODO: Implement light theme.
