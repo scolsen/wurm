@@ -51,12 +51,21 @@ endfunction
 " Since this relies on autocommands, users can turn this off using
 " g:wurm_cmdline
 function! s:setCmd()
-    if exists("g:wurm_cmdline") && g:wurm_cmdline != 0
-    au CmdLineEnter * call s:highlight('StatusLine', 'darkgrey', 'orchid')
-    au CmdLineLeave * call s:highlight('Normal', 'navajo', 'darkgrey')
-    au CmdLineLeave * call s:highlight('StatusLine', 'darkgrey', 'navajo')
-  endif
+   au CmdLineEnter * call s:highlight('StatusLine', 'densegrey', 'apache')
+   au CmdLineEnter * call s:highlight('StatusLineNC', 'densegrey', 'darkgrey')
+   au CmdLineEnter * call s:highlight('ModeMsg', 'apache')
+   au CmdLineLeave * call s:highlight('Normal', 'navajo', 'darkgrey')
+   au CmdLineLeave * call s:highlight('StatusLine', 'darkgrey', 'orchid')
+   au CmdLineLeave * call s:highlight('StatusLineNC', 'darkgrey', 'grey')
+   au CmdLineLeave * call s:highlight('ModeMsg', 'lightorchid')
 endfunction
+
+" Gundo support.
+" Disabled for now.
+" function! s:setGundo()
+"   au BufEnter __Gundo__,__Gundo_Preview__ call s:highlight('StatusLine', 'densegrey', 'apache')
+"   au BufLeave __Gundo__,__Gundo_Preview__ call s:highlight('StatusLine', 'darkgrey', 'orchid')
+" endfunction
 
 " TODO: Complete dark implementation.
 function! s:setDark()
@@ -87,11 +96,11 @@ function! s:setDark()
   call s:highlight('Cursor', 'darkmagenta', 'orchid')
   
   " Status line
-  call s:highlight('StatusLine', 'navajo', 'deepgrey')
-  call s:highlight('StatusLineNC', 'navajo', 'deepgrey')
+  call s:highlight('StatusLine', 'darkgrey', 'orchid')
+  call s:highlight('StatusLineNC', 'darkgrey', 'grey')
   
   " Windows
-  call s:highlight('VertSplit', 'deepgrey', 'deepgrey')
+  call s:highlight('VertSplit', 'densegrey', 'densegrey')
 
   " Diff 
   call s:highlight('DiffChange', '')
@@ -122,7 +131,9 @@ function! s:setDark()
   call s:highlight('LineNr', 'orchid', 'darkgrey')
   call s:highlight('SignColumn', '', 'densegrey')
 
-  call s:setCmd()
+  if exists("g:wurm_cmdline") && g:wurm_cmdline != 0
+    call s:setCmd()
+  endif
 endfunction
 
 " TODO: Implement light theme.
