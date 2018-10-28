@@ -103,10 +103,10 @@ function! s:setDark()
   call s:highlight('VertSplit', 'densegrey', 'densegrey')
 
   " Diff 
-  call s:highlight('DiffChange', '')
+  call s:highlight('DiffChange', 'navajo', 'densegrey')
   call s:highlight('DiffText', '')
-  call s:highlight('DiffAdd', '')
-  call s:highlight('DiffDelete', '')
+  call s:highlight('DiffAdd', 'orchid', 'densegrey')
+  call s:highlight('DiffDelete', 'apache', 'densegrey')
 
   " Folds
   call s:highlight('Folded', '')
