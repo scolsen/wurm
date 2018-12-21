@@ -94,7 +94,7 @@ function! s:setDark()
  
   " Cursor
   call s:highlight('Cursor', 'darkmagenta', 'orchid')
-  call s:highlight('CursorLine', '', '')
+  call s:highlight('CursorLine', '', '', '')
   call s:highlight('CursorLineNr', 'apache') 
 
   " Status line
