@@ -123,8 +123,8 @@ function! s:setDark()
   call s:highlight('Error', '')
 
   " Spelling
-  call s:highlight('SpellLocal', '', '', 'italic')
-  call s:highlight('SpellBad', '', 'darkgrey', 'underline')
+  call s:highlight('SpellLocal', 'apache', '', 'italic')
+  call s:highlight('SpellBad', 'apache', 'darkgrey', 'underline')
   call s:highlight('SpellCap', '', 'darkgrey', 'underline')
 
   " Line gutter
