@@ -94,7 +94,9 @@ function! s:setDark()
  
   " Cursor
   call s:highlight('Cursor', 'darkmagenta', 'orchid')
-  
+  call s:highlight('CursorLine', '', '', 'NONE')
+  call s:highlight('CursorLineNr', 'apache') 
+
   " Status line
   call s:highlight('StatusLine', 'darkgrey', 'orchid')
   call s:highlight('StatusLineNC', 'darkgrey', 'grey')
@@ -103,8 +105,8 @@ function! s:setDark()
   call s:highlight('VertSplit', 'densegrey', 'densegrey')
 
   " Diff 
-  call s:highlight('DiffChange', 'navajo', 'densegrey')
-  call s:highlight('DiffText', '')
+  call s:highlight('DiffChange', 'skyblue', 'densegrey')
+  call s:highlight('DiffText', '', 'densegrey')
   call s:highlight('DiffAdd', 'orchid', 'densegrey')
   call s:highlight('DiffDelete', 'apache', 'densegrey')
 
@@ -140,55 +142,55 @@ endfunction
 function! s:setLight()
   " Base colors.
   call s:highlight('Normal', 'darkgrey', 'navajo')
-  call s:highlight('NonText', 'darkgrey')
+  call s:highlight('NonText', 'orchid')
   call s:highlight('comment', 'grey')
   call s:highlight('constant', 'orchid')
   call s:highlight('string', 'grey')
-  call s:highlight('identifier', 'darkgrey')
-  call s:highlight('statement', 'darkgrey')
-  call s:highlight('define', 'darkgrey')
-  call s:highlight('preproc', 'darkgrey')
-  call s:highlight('type', 'darkgrey')
-  call s:highlight('special', 'darkgrey')
-  call s:highlight('Underlined', 'darkgrey')
-  call s:highlight('label', 'darkgrey')
-  call s:highlight('operator', 'orchid')
+  call s:highlight('identifier', 'darkgrey', 'navajo', 'bold')
+  call s:highlight('statement', 'lightpink')
+  call s:highlight('define', 'apache')
+  call s:highlight('preproc', 'skyblue')
+  call s:highlight('type', 'lightorchid')
+  call s:highlight('special', 'apache')
+  call s:highlight('Underlined', '')
+  call s:highlight('label', 'lightorchid')
+  call s:highlight('operator', 'lightpink')
   call s:highlight('delimiter', 'darkgrey')
   
   " Inline notifications. 
-  call s:highlight('Todo', 'darkgrey')
-  call s:highlight('Cursor', 'darkgrey')
-  call s:highlight('Search', 'salmon')
-  call s:highlight('IncSearch', 'darkgrey')
+  call s:highlight('Todo', 'orchid', 'navajo', 'bold')
+  call s:highlight('Cursor', 'darkmagenta')
+  call s:highlight('Search', 'salmon', 'navajo', 'bold')
+  call s:highlight('IncSearch', '')
   call s:highlight('LineNr', 'darkgrey')
-  call s:highlight('title', 'darkgrey')
+  call s:highlight('title', '')
   
   " Status line
   call s:highlight('StatusLine', 'navajo', 'deepgrey')
   call s:highlight('StatusLineNC', 'darkgrey')
   
   " Windows
-  call s:highlight('VertSplit', 'darkgrey')
+  call s:highlight('VertSplit', 'densegrey')
 
   " Diff 
-  call s:highlight('DiffChange', 'darkgrey')
-  call s:highlight('DiffText', 'darkgrey')
-  call s:highlight('DiffAdd', 'darkgrey')
-  call s:highlight('DiffDelete', 'darkgrey')
+  call s:highlight('DiffChange', 'skyblue')
+  call s:highlight('DiffText', '')
+  call s:highlight('DiffAdd', 'orchid')
+  call s:highlight('DiffDelete', 'apache')
 
   " Folds
-  call s:highlight('Folded', 'darkgrey')
-  call s:highlight('FoldColumn', 'darkgrey')
+  call s:highlight('Folded', '')
+  call s:highlight('FoldColumn', '')
   
   " Visual
-  call s:highlight('Visual', 'darkgrey')
+  call s:highlight('Visual', 'salmon', 'orchid')
   
   " Command window
-  call s:highlight('ErrorMsg', 'darkgrey')
-  call s:highlight('WarningMsg', 'darkgrey')
-  call s:highlight('ModeMsg', 'darkgrey')
-  call s:highlight('MoreMsg', 'darkgrey')
-  call s:highlight('Error', 'darkgrey')
+  call s:highlight('ErrorMsg', 'apache')
+  call s:highlight('WarningMsg', 'salmon')
+  call s:highlight('ModeMsg', 'lightorchid')
+  call s:highlight('MoreMsg', 'skyblue')
+  call s:highlight('Error', '')
 endfunction
 
 " Set base colors.
