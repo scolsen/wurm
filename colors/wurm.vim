@@ -106,7 +106,7 @@ function! s:setDark()
 
   " Diff 
   call s:highlight('DiffChange', 'skyblue', 'densegrey')
-  call s:highlight('DiffText', '')
+  call s:highlight('DiffText', '', 'densegrey')
   call s:highlight('DiffAdd', 'orchid', 'densegrey')
   call s:highlight('DiffDelete', 'apache', 'densegrey')
 
